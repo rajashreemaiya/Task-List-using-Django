@@ -6,6 +6,6 @@ The app directory structure looks as follows:
 TasksApp/
 └── tasks
     ├── templates
-        └── index
-        └── detail
+    |    └── index
+    |   └── detail
     
