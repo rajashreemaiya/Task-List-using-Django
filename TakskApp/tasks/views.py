@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 
-# Create your views here.
 from django.http import HttpResponse
 from .models import Item
 from .forms import PostForm,getData
