@@ -26,6 +26,7 @@ The server will be started at http://127.0.0.1:8000/
 A django admin interface is set up at http://127.0.0.1:8000/admin
 
 username: admin
+
 password: password
 
 Navigate to tasks homepage using http://127.0.0.1:8000/tasks. This page will let you perform all the functionalities of the app.
