@@ -1,0 +1,76 @@
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: linen;
+
+            }
+
+        .btn {
+            background: #3498db;
+            border-radius: 28px;
+            color: #ffffff;
+
+        }
+
+            </style>
+</head>
+
+<nav class="navbar navbar-inverse">
+    <h1 style="color:white;float: left;padding-left: 35px;">My Tasks! </h1>
+</nav>
+
+
+{% if latest_item_list %}
+<ul>
+    {% for item in latest_item_list %}
+    <li style="list-style-type:none">
+        {% if item.completed == True %}
+        <a href="/tasks/{{ item.id}}/detail/" style="font-size: 16px;">
+
+            <span id="markdone{{item.id}}"> [x] </span>
+            {{ item.title }}</a>
+        {% else %}
+        <a href="/tasks/{{ item.id}}/detail/" style="font-size: 16px;">
+
+            <span id="markdone{{item.id}}"> [ ] </span>
+            {{ item.title }}</a>
+
+        <form action="{%url 'tasks:markIt' item.id %}" method="post" onsubmit="return myFunction({{item.id}})" style="    margin-top: 10px;">
+            {% csrf_token %}
+            <input type="submit" style="display:block" id="marked{{item.id}}" class="btn" value="Mark Complete">
+                </form>
+        {% endif %}
+
+        <form action="{%url 'tasks:deleteTask' item.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete" class="btn">
+                </form>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p style="float: left;padding-left: 35px;font-size: 16px;">No tasks today! :)</p>
+{% endif %}
+
+<div style="padding: 35px;">
+    <h1>Create a new Task</h1>
+
+
+    <form action='/tasks/' method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Submit" class="btn">
+    </form>
+</div>
+<script>
+
+    function myFunction(id)
+    {
+        document.getElementById("markdone"+id).innerHTML = "[x]";
+        document.getElementById("marked"+id).style.visibility = 'hidden';
+
+
+    }
+</script>
