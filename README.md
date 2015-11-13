@@ -12,8 +12,8 @@ This application has the following features:
 
 The following links does each job mentioned above:
 
-/tasks - Homepage : Displays a list of existing tasks and lets you create a new task.
-/tasks/id/detail - A single task page, displays each task and gives an option to update if it is not marked as completed. Also, has a link 'All Tasks' on header to navigate back to the homepage.
+1. /tasks - Homepage : Displays a list of existing tasks and lets you create a new task.
+2. /tasks/id/detail - A single task page, displays each task and gives an option to update if it is not marked as completed. Also, has a link 'All Tasks' on header to navigate back to the homepage.
 
 To run this app on your local machine, follow the below steps:
 
