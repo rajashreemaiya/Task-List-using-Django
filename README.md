@@ -33,7 +33,7 @@ Navigate to tasks homepage using http://127.0.0.1:8000/tasks. This page will let
 
 If the admin interface does not work, create a user using:
 
-python manage.py createuser
+python manage.py createsuperuser
 
 username : admin
 
