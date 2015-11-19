@@ -40,4 +40,3 @@ username : admin
 email : admin@example.com
 
 Enter the desired password.
-    
